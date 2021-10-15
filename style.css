@@ -1,0 +1,73 @@
+body {
+    margin          : 0;
+    background-image: linear-gradient(to right, rgba(69, 235, 77, 0.801), rgba(216, 41, 41, 0.89), rgba(114, 112, 199), rgba(255, 251, 0));
+
+}
+
+.main-game {
+    height         : 100vh;
+    width          : 100vw;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+}
+
+.genius {
+    display            : grid;
+    grid-template-areas: "green red"
+        "yellow blue";
+    grid-gap        : 10px;
+    border          : 10px solid black;
+    background-color: black;
+    border-radius   : 100%;
+    width           : 600px;
+    height          : 600px;
+}
+
+.green {
+    grid-area             : green;
+    background-color      : green;
+    border-top-left-radius: 100%;
+
+}
+
+.red {
+    grid-area              : red;
+    background-color       : red;
+    border-top-right-radius: 100%;
+}
+
+
+.yellow {
+    grid-area                : yellow;
+    background-color         : yellow;
+    border-bottom-left-radius: 100%;
+}
+
+.blue {
+    grid-area                 : blue;
+    background-color          : blue;
+    border-bottom-right-radius: 100%;
+}
+
+.green:hover {
+    background-color: rgba(51, 255, 0, 0.74)
+}
+
+.red:hover {
+    background-color: rgba(255, 0, 0, 0.74)
+}
+
+.yellow:hover {
+    animation-delay : 4s;
+    background-color: rgba(255, 251, 0, 0.74)
+}
+
+.blue:hover {
+    background-color: rgba(76, 0, 255, 0.74)
+}
+
+.selected {
+    opacity: 0.8;
+}
