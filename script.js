@@ -2,8 +2,6 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 
-// green- 0 / red- 1 / yellow- 2 blue- 3
-
 const green = document.querySelector(".green");
 const red = document.querySelector(".red");
 const yellow = document.querySelector(".yellow");
@@ -14,33 +12,32 @@ let shuffleOrder = () => {
     order[order.length] = colorOrder;
     clickedOrder = [];
 
-    for(let i in order) {
+    for (let i in order) {
         let elementColor = createColorElement(order[i]);
         lightColor(elementColor, Number(i) + 1);
     }
 }
 
 let lightColor = (element, number) => {
-    setTimeout(() =>{
     number = number * 500;
+    setTimeout(() => { countdown }, number * 100);
     setTimeout(() => {
         element.classList.add('selected');
     }, number - 250);
     setTimeout(() => {
         element.classList.remove('selected');
-    });
-}, 500);
+    }, number);
+
 }
 
 let checkOrder = () => {
-    for(let i in clickedOrder) {
-        if(clickedOrder[i] != order[i]) {
+    for (let i in clickedOrder) {
+        if (clickedOrder[i] != order[i]) {
             gameOver();
             break;
         }
     }
-    if(clickedOrder.length == order.length) {
-        alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+    if (clickedOrder.length == order.length) {
         nextLevel();
     }
 }
@@ -52,19 +49,19 @@ let click = (color) => {
     setTimeout(() => {
         createColorElement(color).classList.remove('selected');
         checkOrder();
-    },250);
+    }, 250);
 }
 
 let createColorElement = (color) => {
-    if(color == 0) {
+    if (color == 0) {
         return green;
-    } 
-    else if(color == 1) {
+    }
+    else if (color == 1) {
         return red;
-    } 
+    }
     else if (color == 2) {
         return yellow;
-    } 
+    }
     else if (color == 3) {
         return blue;
     }
@@ -76,19 +73,15 @@ let nextLevel = () => {
 }
 
 let gameOver = () => {
-    alert(`Sua pontuação é ${score}! Você perdeu o jogo!\nClique em OK para iniciar um novo jogo`);
+    alert(`Sua pontuação é ${score}! Você perdeu o jogo!`);
     order = [];
     clickedOrder = [];
-
-    playGame();
+    window.location.href = "/page.html";
 }
 
 let playGame = () => {
-    alert('Iniciando novo jogo!');
     score = 0;
-
     nextLevel();
-    
 }
 
 green.onclick = () => click(0);

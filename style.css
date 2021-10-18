@@ -1,6 +1,18 @@
+.container {
+    width         : 100vh;
+    display       : flex;
+    text-align    : center;
+    flex-direction: column;
+    margin        : 0 auto;
+    padding       : 2rem;
+}
+
 body {
+    color           :black;
+    padding         : 0;
     margin          : 0;
-    background-image: linear-gradient(to right, rgba(69, 235, 77, 0.801), rgba(216, 41, 41, 0.89), rgba(114, 112, 199), rgba(255, 251, 0));
+    background-image: linear-gradient(
+        to right, rgba(69, 235, 77, 0.801), rgba(216, 41, 41, 0.89), rgba(114, 112, 199), rgba(255, 251, 0));
 
 }
 
@@ -15,8 +27,8 @@ body {
 
 .genius {
     display            : grid;
-    grid-template-areas: "green red"
-        "yellow blue";
+    grid-template-areas: "green red" 
+    "yellow blue";
     grid-gap        : 10px;
     border          : 10px solid black;
     background-color: black;
@@ -52,22 +64,29 @@ body {
 }
 
 .green:hover {
-    background-color: rgba(51, 255, 0, 0.74)
+
+    transition: .2s;
+    transform : scale(1.01);
 }
 
 .red:hover {
-    background-color: rgba(255, 0, 0, 0.74)
+
+    transition: .2s;
+    transform : scale(1.01);
 }
 
 .yellow:hover {
-    animation-delay : 4s;
-    background-color: rgba(255, 251, 0, 0.74)
+
+    transition: .2s;
+    transform : scale(1.01);
 }
 
 .blue:hover {
-    background-color: rgba(76, 0, 255, 0.74)
+
+    transition: .2s;
+    transform : scale(1.01);
 }
 
 .selected {
-    opacity: 0.8;
+    opacity: 0.6;
 }
