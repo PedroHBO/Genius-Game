@@ -7,4 +7,4 @@ Após finalizar as aulas, foi feita a alteração do CSS, do timer no javaScript
 **COMO FICOU:**
 ![Genius](https://user-images.githubusercontent.com/66649954/137764164-c1a7a2a0-074c-4564-8df4-9be32fa9cffa.png)
 
-**Lets Bora!**
+**Avante DEV!**
